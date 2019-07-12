@@ -11,6 +11,22 @@ module.exports = {
         contentBase:'./public',
         inline:true
     },
+    module: {
+        rules: [
+            {
+                test: /(\.jsx|\.js)$/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: [
+                            "es2015", "react"
+                        ]
+                    }
+                },
+                exclude: /node_modules/
+            }
+        ]
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template:'./src/index.html',
