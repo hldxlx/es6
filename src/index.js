@@ -3,4 +3,5 @@ import 'babel-polyfill';
 //import './js/reflect';
 //import './js/Promise';
 //import './js/for...of&Iterator';
-import './js/Generator';
+//import './js/Generator';
+import './js/module';
