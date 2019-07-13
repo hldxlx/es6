@@ -6,6 +6,7 @@ import 'babel-polyfill';
 //import './js/Generator';
 //import './js/module';
 import login from './login/init';
+import './api/FetchMock';
 login({
     container:document.getElementById("container")
 });

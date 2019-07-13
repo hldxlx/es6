@@ -21,6 +21,7 @@
     "@babel/core": "^7.5.4",
     "babel-polyfill": "^6.26.0",
     "debug": "^4.1.1",
+    "fetch-mock": "^7.3.6",
     "webpack-cli": "^3.3.5"
   }
 }
