@@ -1,4 +1,5 @@
-import render from './render'
+import render from './render';
+import event from './event'
 const login = (opts={}) => {
     let obj = {
         loginBtnText:'登录',
@@ -6,6 +7,8 @@ const login = (opts={}) => {
         loginPas:'请输入密码'
     }
     let loginObj = Object.assign(opts,obj);
-    render(loginObj)
+    render(loginObj);
+    event();
+
 }
 export default login;
