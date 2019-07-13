@@ -4,4 +4,9 @@ import 'babel-polyfill';
 //import './js/Promise';
 //import './js/for...of&Iterator';
 //import './js/Generator';
-import './js/module';
+//import './js/module';
+import login from './login/init';
+login({
+    container:document.getElementById("container")
+});
+
