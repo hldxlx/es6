@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    var obj = {};
+    obj.list =[];
+    obj.listen = function(key,fn){
+        if(!this.list[key]){
+            this.list[key]  = [];
+        }
+        this.list[key].push(fn);
+    }
+
+    obj.message = function(){
+        var key = Array.prototype.shift.call(arguments);//取出消息类型名称
+
+        var fns = this.list[key]; //取出消息对应回调函数集合
+        //如果没有订阅这个消息，直接返回
+        if(!fns || fns.length==0){
+            return;
+        }
+
+        for(var i= 0,fn;fn=fns[i++];){
+
+            fn.apply(this,arguments);//arguments发布消息附带参数
+        }
+
+    };
+
+    obj.listen("红色",function(size){
+
+        console.log("尺寸"+size);
+
+    });
+
+    obj.listen("黑色",function(size){
+
+        console.log("尺寸"+size);
+
+    });
+
+    obj.message("红色",40);
+    obj.message("黑色",42);
+</script>
+</body>
+</html>
