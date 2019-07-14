@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //单体
+        //第一种形式
+//        function Obj(){
+//            this.name = "11";
+//            this.run = null;
+//        }
+//        Obj.prototype.getName = function () {
+//            return this.name;
+//        }
+//        function getRun() {
+//            //console.log(!this.run);
+//            if(!this.run){
+//                this.run = new Obj();
+//            }
+//            return this.run;
+//        }
+//
+//        var a = getRun();
+//        var b = getRun();
+//        console.log(a.name);
+//        console.log(b.name);
+//        console.log(a === b)
+
+        //第二种形式
+
+            function Obj(){
+                this.name = "22";
+            }
+            Obj.prototype.getName = function () {
+                return this.name;
+            }
+            var getRun = (function () {
+                var run = null;
+                return function(){
+                    if(!run){
+                        run = new Obj();
+                    }
+                    return run;
+                }
+            })();
+            var a = getRun();
+            var b = getRun();
+            console.log(a.name);
+            console.log(b.name);
+            console.log(a === b)
+
+    </script>
+</body>
+</html>
