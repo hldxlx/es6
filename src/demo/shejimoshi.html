@@ -6,7 +6,7 @@
 </head>
 <body>
     <script type="text/javascript">
-        //单体
+        //单体 只能new一次
         //第一种形式
 //        function Obj(){
 //            this.name = "11";
@@ -31,26 +31,52 @@
 
         //第二种形式
 
-            function Obj(){
-                this.name = "22";
-            }
-            Obj.prototype.getName = function () {
-                return this.name;
-            }
-            var getRun = (function () {
-                var run = null;
-                return function(){
-                    if(!run){
-                        run = new Obj();
-                    }
-                    return run;
+//            function Obj(){
+//                this.name = "22";
+//            }
+//            Obj.prototype.getName = function () {
+//                return this.name;
+//            }
+//            var getRun = (function () {
+//                var run = null;
+//                return function(){
+//                    if(!run){
+//                        run = new Obj();
+//                    }
+//                    return run;
+//                }
+//            })();
+//            var a = getRun();
+//            var b = getRun();
+//            console.log(a.name);
+//            console.log(b.name);
+//            console.log(a === b)
+
+
+
+
+
+        //函数 ==》 专一 创建div
+        var CreateDiv = function(html){
+            this.html = html;
+            this.init();
+        }
+        CreateDiv.prototype.init = function(){
+            var oDiv = document.createElement("div");
+            oDiv.innerHTML = this.html;
+            document.body.appendChild(oDiv);
+        }
+        var proxyMode = (function(){
+            var run;
+            return function(){
+                if(!run){
+                    run = new CreateDiv("一个单体");
                 }
-            })();
-            var a = getRun();
-            var b = getRun();
-            console.log(a.name);
-            console.log(b.name);
-            console.log(a === b)
+                return run;
+            }
+        })()
+        proxyMode();
+
 
     </script>
 </body>

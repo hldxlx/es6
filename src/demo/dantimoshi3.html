@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script type="text/javascript">
+//        function CreateDiv(){
+//            var oDiv = document.createElement("div");
+//            oDiv.innerHTML = "一个格子";
+//            oDiv.style.display = 'none';
+//            document.body.appendChild(oDiv);
+//            return oDiv;
+//        }
+//        document.getElementById("btn").onclick = function () {
+//            var w = CreateDiv();
+//            w.style.display = 'block';
+//        }
+
+
+    //====================
+    var CreateDiv = (function () {
+        var oDiv;
+        return function(){
+            if(!oDiv){
+                oDiv = document.createElement("div");
+                oDiv.innerHTML = "一个格子";
+                oDiv.style.display = 'none';
+                document.body.appendChild(oDiv);
+            }
+            return oDiv;
+
+        }
+    })();
+
+
+    document.getElementById("btn").onclick = function () {
+        var w = CreateDiv();
+        w.style.display = 'block';
+    }
+    </script>
+</body>
+</html>
