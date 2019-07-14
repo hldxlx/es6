@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    //型号，屏幕大小，出厂日期，     color
+
+    function Iphone(model,screen,date){
+        this.model = model;
+        this.screen = screen;
+        this.date = date;
+    }
+
+    var Fatory = (function(){
+
+        var iphones = {};
+        return {
+            get:function(model,screen,date){
+                var key = model+screen+date;
+                if(!iphones[key]){
+                    iphones[key] = new Iphone(model,screen,date);
+                }
+                return iphones[key];
+            }
+
+        }
+
+    })();
+
+    function Iphones(model,screen,date,color){
+
+        this.weigth  = Fatory.get(model,screen,date);
+        this.color = color;
+
+    }
+
+    var arrIphone = [];
+    for(var i=0;i<10000;i++){
+
+        arrIphone.push(new Iphones("iphone7s","5.0","8-8","红色"));
+
+    }
+
+    console.log(arrIphone);
+
+
+
+
+</script>
+
+</body>
+</html>
