@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //规约函数 通过一个函数调用另一个函数，将数组转换为单一的值
+        //ruduce
+        
+        function Reduce(add,num,array) {
+            forEach(array,function (value) {
+                num = add(num,value)
+            })
+            return num;
+        }
+        function add(num1,num2) {
+            return num1 + num2;
+        }
+        function forEach(arr,fn){
+            for(var i=0;i<arr.length;i++){
+               fn(arr[i])
+            }
+        }
+        var arr = [1,2,3,4,5];
+        alert(Reduce(add,2,arr));
+
+    </script>
+</body>
+</html>

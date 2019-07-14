@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="1.png" id="img">
+<script type="text/javascript">
+    //js题
+    //1
+//    var url = "https://www.baidu.com/s?wd=11&rsv_sug3=3&rsv_sug1=2&rsv_sug7=100&inputT=892";
+//    function qeryUrl(url){
+//        var data = url.split("?")[1];
+//        var tmp = data.split("&");
+//        var obj = {}
+//        for(var i=0;i<tmp.length;i++){
+//            var arr = tmp[i].split("=");
+//            //console.log(arr);
+//            obj[arr[0]] = arr[1];
+//        }
+//        return obj;
+//    }
+//    var res = qeryUrl(url);
+    //console.log(res);
+
+    //2  取出最多重复项及次数
+//    var str = "qqddcccddddd";
+//    var obj = {};
+//    for(var i=0;i<str.length;i++){
+//        var char = str.charAt(i);
+//        console.log(char);
+//        if(obj[char]){
+//            obj[char]++
+//        }else{
+//            obj[char] = 1;
+//        }
+//    }
+//    var max = 0;
+//    var maxVal = null;
+//    for(var k in obj){
+//        if(max < obj[k]){
+//            max = obj[k];
+//            maxVal = k;
+//        }
+//    }
+//    console.log(obj);
+//    console.log(max,maxVal);
+
+    //3
+
+//    var img = document.getElementById("img");
+//    var timer = setInterval(function(){
+//        if(img.complete){
+//            clearInterval(timer)
+//            alert(1)
+//        }
+//    },1000)
+//
+//    function pro() {
+//        return new Promise((res,rej)=>{
+//            res('111')
+//        })
+//    }
+//    pro().then(function(num){
+//        alert(num)
+//    })
+
+    //4
+//    var arr = ["a","b","c"];
+//    function fn(arr){
+//        var str = "";
+//        for(var i=0;i<arr.length;i++){
+//            str += arr[i]+"0";
+//        }
+//        return str;
+//    }
+//    console.log(fn(arr));
+
+    //=======高阶函数 函数操作另外一个函数 1
+//    var arr = ["a","b","c"];
+//    function forEach(arr,fn){
+//        for(var i=0;i<arr.length;i++){
+//            fn(arr[i]);
+//        }
+//    }
+//    forEach(arr,function(value){
+//        console.log(value+"0");
+//    })
+
+    //高阶函数2  filter
+//    var arr = [1,2,3,4,5];
+//    function filter(arr,fn) {
+//        var brr = [];
+//        for(var i=0;i<arr.length;i++){
+//           if(fn(arr[i])){
+//               brr.push(arr[i])
+//           }
+//        }
+//        return brr;
+//    }
+//
+//    console.log(filter(arr, function (value) {
+//        return value > 3
+//    }));
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //映射函数 会遍历数组 针对数组的每一个元素 调用指定的操作 然后将操作得出的值存储在另一个数组中 返回新的数组
+        function Map(fn,array) {
+            var brr = [];
+            forEach(array,function(element){
+                brr.push(fn(element))
+            })
+            return brr;
+        }
+        function forEach(arr,fn){
+            for(var i=0;i<arr.length;i++){
+                fn(arr[i])
+            }
+        }
+        alert(  Map(Math.round,[1.1,2.2,3.3])  );
+
+
+    </script>
+</body>
+</html>
