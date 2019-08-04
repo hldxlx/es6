@@ -12,7 +12,7 @@ class A {
         this.x = 1;
     }
     print() {
-        console.log(this.num);
+        console.log(this.num + `${this.name}`);
     }
 }
 
@@ -25,7 +25,11 @@ class B extends A {
     m() {
         super.print();
     }
+    n(){
+        console.log(this.age)
+    }
 }
 
 let b = new B('ww',45,997777);
 b.m();
+b.n();

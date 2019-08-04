@@ -5,9 +5,13 @@ import 'babel-polyfill';
 //import './js/for...of&Iterator';
 //import './js/Generator';
 //import './js/module';
-import login from './login/init';
-import './api/FetchMock';
-login({
-    container:document.getElementById("container")
-});
+// import login from './login/init';
+// import './api/FetchMock';
+// login({
+//     container:document.getElementById("container")
+// });
+//import Lottery from './lottery';
+
+//import './js/class';
+import './js/myJquery';
 
