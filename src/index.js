@@ -13,5 +13,8 @@ import 'babel-polyfill';
 //import Lottery from './lottery';
 
 //import './js/class';
-import './js/myJquery';
+//import './js/myJquery';
+
+//import './js/design/promise';
+import './js/design/timu';
 
