@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    顺序{{message}}
+    逆序{{reserveMsg}}
+</div>
+    <script type="text/javascript" src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                message:'hello'
+            },
+            computed:{
+                reserveMsg:function(){
+                    return this.message.split('').reverse().join('');
+                }
+            }
+        })
+    </script>
+</body>
+</html>
