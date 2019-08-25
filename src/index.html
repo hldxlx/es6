@@ -8,14 +8,27 @@
     <div id="container">
 
     </div>
-    <p>1</p>
-    <p>2</p>
-    <p>3</p>
-    <script type="text/javascript" src="./js/myJquery.js"></script>
-<script>
-    var $p = $('p');
-    $p.append()
-</script>
+    <!--<p>1</p>-->
+    <!--<p>2</p>-->
+    <!--<p>3</p>-->
+    <!--<script type="text/javascript" src="./js/myJquery.js"></script>-->
+<!--<script>-->
+    <!--var $p = $('p');-->
+    <!--$p.append()-->
+<!--</script>-->
+<input type="file" id="fileinput"/>
 
+
+<script type="text/javascript">
+    var fileinput = document.querySelector('#fileinput');
+    fileinput.onchange = function(){
+        var file =  fileinput.files[0];
+        var filereader = new FileReader();
+        filereader.readAsArrayBuffer(file);
+        filereader.onload = function(){
+            console.log(filereader.result.byteLength);
+        }
+    }
+</script>
 </body>
 </html>
